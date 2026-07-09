@@ -1,0 +1,8 @@
+vendor/
+composer.lock
+phpunit.xml
+pint.json
+coverage/
+.DS_Store
+*.log
+.env
