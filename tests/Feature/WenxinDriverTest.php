@@ -14,7 +14,7 @@ use SnowmanNunu\Ai\DTO\AiResponse;
 
 class WenxinDriverTest extends TestCase
 {
-    public function testChat(): void
+    public function test_chat(): void
     {
         $mockHandler = new MockHandler([
             new Response(200, [], json_encode([

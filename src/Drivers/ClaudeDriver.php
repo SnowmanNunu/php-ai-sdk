@@ -16,6 +16,7 @@ use SnowmanNunu\Ai\DTO\TokenUsage;
 class ClaudeDriver implements AiDriverInterface
 {
     use HandlesGuzzleExceptions;
+
     protected Client $client;
 
     protected array $config;

@@ -10,12 +10,11 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use SnowmanNunu\Ai\Drivers\ClaudeDriver;
-use SnowmanNunu\Ai\Drivers\OpenAiDriver;
 use SnowmanNunu\Ai\DTO\AiResponse;
 
 class ClaudeDriverTest extends TestCase
 {
-    public function testChat(): void
+    public function test_chat(): void
     {
         $mockHandler = new MockHandler([
             new Response(200, [], json_encode([

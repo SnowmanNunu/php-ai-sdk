@@ -11,7 +11,7 @@ use SnowmanNunu\Ai\DTO\TokenUsage;
 
 class DtoTest extends TestCase
 {
-    public function testTokenUsage(): void
+    public function test_token_usage(): void
     {
         $usage = new TokenUsage(100, 50, 150);
 
@@ -20,7 +20,7 @@ class DtoTest extends TestCase
         $this->assertEquals(150, $usage->totalTokens);
     }
 
-    public function testAiResponse(): void
+    public function test_ai_response(): void
     {
         $usage = new TokenUsage(100, 50, 150);
         $raw = ['key' => 'value'];
@@ -40,7 +40,7 @@ class DtoTest extends TestCase
         $this->assertEquals($raw, $response->raw);
     }
 
-    public function testStreamChunk(): void
+    public function test_stream_chunk(): void
     {
         $chunk = new StreamChunk(content: 'Hello', done: false);
 

@@ -11,7 +11,7 @@ use SnowmanNunu\Ai\Exceptions\AiDriverNotFoundException;
 
 class AiManagerTest extends TestCase
 {
-    public function testDefaultDriver(): void
+    public function test_default_driver(): void
     {
         $manager = new AiManager([
             'default' => 'claude',
@@ -23,7 +23,7 @@ class AiManagerTest extends TestCase
         $this->assertEquals('claude', $manager->getDefaultDriver());
     }
 
-    public function testSetDefaultDriver(): void
+    public function test_set_default_driver(): void
     {
         $manager = new AiManager([
             'default' => 'claude',
@@ -38,7 +38,7 @@ class AiManagerTest extends TestCase
         $this->assertEquals('openai', $manager->getDefaultDriver());
     }
 
-    public function testDriverNotFound(): void
+    public function test_driver_not_found(): void
     {
         $manager = new AiManager([
             'default' => 'unknown',
@@ -50,7 +50,7 @@ class AiManagerTest extends TestCase
         $manager->driver();
     }
 
-    public function testCustomDriver(): void
+    public function test_custom_driver(): void
     {
         $manager = new AiManager([
             'default' => 'custom',

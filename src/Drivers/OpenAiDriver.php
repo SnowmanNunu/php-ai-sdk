@@ -16,6 +16,7 @@ use SnowmanNunu\Ai\DTO\TokenUsage;
 class OpenAiDriver implements AiDriverInterface
 {
     use HandlesGuzzleExceptions;
+
     protected Client $client;
 
     protected array $config;
@@ -40,7 +41,7 @@ class OpenAiDriver implements AiDriverInterface
     protected function getDefaultHeaders(): array
     {
         return [
-            'Authorization' => 'Bearer ' . ($this->config['api_key'] ?? ''),
+            'Authorization' => 'Bearer '.($this->config['api_key'] ?? ''),
             'Content-Type' => 'application/json',
         ];
     }

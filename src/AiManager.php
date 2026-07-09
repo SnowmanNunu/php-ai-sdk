@@ -6,6 +6,16 @@ namespace SnowmanNunu\Ai;
 
 use Closure;
 use SnowmanNunu\Ai\Contracts\AiDriverInterface;
+use SnowmanNunu\Ai\Drivers\ClaudeDriver;
+use SnowmanNunu\Ai\Drivers\DeepSeekDriver;
+use SnowmanNunu\Ai\Drivers\KimiDriver;
+use SnowmanNunu\Ai\Drivers\MiniMaxDriver;
+use SnowmanNunu\Ai\Drivers\MoonshotDriver;
+use SnowmanNunu\Ai\Drivers\OpenAiDriver;
+use SnowmanNunu\Ai\Drivers\QwenDriver;
+use SnowmanNunu\Ai\Drivers\WenxinDriver;
+use SnowmanNunu\Ai\Drivers\XiaomiMimoDriver;
+use SnowmanNunu\Ai\Drivers\ZhipuDriver;
 use SnowmanNunu\Ai\DTO\AiResponse;
 use SnowmanNunu\Ai\Exceptions\AiDriverNotFoundException;
 
@@ -75,70 +85,70 @@ class AiManager
     {
         $config = $this->getDriverConfig('claude');
 
-        return new \SnowmanNunu\Ai\Drivers\ClaudeDriver($config);
+        return new ClaudeDriver($config);
     }
 
     protected function createOpenAiDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('openai');
 
-        return new \SnowmanNunu\Ai\Drivers\OpenAiDriver($config);
+        return new OpenAiDriver($config);
     }
 
     protected function createDeepSeekDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('deepseek');
 
-        return new \SnowmanNunu\Ai\Drivers\DeepSeekDriver($config);
+        return new DeepSeekDriver($config);
     }
 
     protected function createZhipuDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('zhipu');
 
-        return new \SnowmanNunu\Ai\Drivers\ZhipuDriver($config);
+        return new ZhipuDriver($config);
     }
 
     protected function createQwenDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('qwen');
 
-        return new \SnowmanNunu\Ai\Drivers\QwenDriver($config);
+        return new QwenDriver($config);
     }
 
     protected function createWenxinDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('wenxin');
 
-        return new \SnowmanNunu\Ai\Drivers\WenxinDriver($config);
+        return new WenxinDriver($config);
     }
 
     protected function createMoonshotDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('moonshot');
 
-        return new \SnowmanNunu\Ai\Drivers\MoonshotDriver($config);
+        return new MoonshotDriver($config);
     }
 
     protected function createMiniMaxDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('minimax');
 
-        return new \SnowmanNunu\Ai\Drivers\MiniMaxDriver($config);
+        return new MiniMaxDriver($config);
     }
 
     protected function createKimiDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('kimi');
 
-        return new \SnowmanNunu\Ai\Drivers\KimiDriver($config);
+        return new KimiDriver($config);
     }
 
     protected function createXiaomiMimoDriver(): AiDriverInterface
     {
         $config = $this->getDriverConfig('xiaomi-mimo');
 
-        return new \SnowmanNunu\Ai\Drivers\XiaomiMimoDriver($config);
+        return new XiaomiMimoDriver($config);
     }
 
     protected function getDriverConfig(string $driver): array
